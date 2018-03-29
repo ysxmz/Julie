@@ -89,6 +89,7 @@
             android:id="@+id/AutomaticLogin"
             android:layout_width="110dp"
             android:layout_height="40dp"
+            android:textColor="@color/whitesmoke"
             android:textSize="15sp"
             android:text="自动登录" />
 

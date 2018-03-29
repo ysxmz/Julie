@@ -141,6 +141,7 @@ public class RegActivity extends AppCompatActivity {
     private void init() {
         //获取注册界面的各个控件
         textPhoneNumber = (EditText) findViewById(R.id.RegisterPhoneNumber);
+        textPassword=(EditText)findViewById(R.id.RegisterPassword);
         textIdentifyingCode = (EditText) findViewById(R.id.RegisterIdentifyingCode);
         buttonSendMessage = (Button) findViewById(R.id.SendIdentify);
         buttonRegister = (Button) findViewById(R.id.RegisterDetermination);
@@ -179,8 +180,14 @@ public class RegActivity extends AppCompatActivity {
                         params.addParameter("password", textPassword.getText().toString());
                         x.http().get(params, new org.xutils.common.Callback.CommonCallback<String>() {
                             public void onSuccess(String result) {
-                                Toast.makeText(x.app(), result, Toast.LENGTH_LONG).show();
-                                Log.i("JAVA", "onSuccess result:" + result);
+                                try {
+                                    JSONObject jb = new JSONObject(result);
+                                    //Log.i("AAA", String.valueOf(jb.getInt("code"))+jb.getString("msg"));
+                                    Toast.makeText(x.app(), jb.getString("msg"), Toast.LENGTH_LONG).show();
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
 
                             //请求异常后的回调方法

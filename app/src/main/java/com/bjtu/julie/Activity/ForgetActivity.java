@@ -14,7 +14,9 @@ import android.widget.Toast;
 
 import com.bjtu.julie.R;
 
+import org.json.JSONException;
 import org.json.JSONObject;
+import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
@@ -31,6 +33,7 @@ public class ForgetActivity extends AppCompatActivity {
     private EditText textIdentifyingCode;
     private Button buttonForgetSet;
     private Button buttonSendMessage;
+    private EditText textPassword;
     private int i = 60;//倒计时
 
     @Override
@@ -67,7 +70,14 @@ public class ForgetActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 String phoneNum = textPhoneNumber.getText().toString().trim();
-
+                //判断手机号码是否合法
+                Pattern p = Pattern.compile("^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(17[013678])|(18[0,5-9]))\\d{8}$");
+                Matcher m = p.matcher(phoneNum);
+                if(m.matches()==false) {
+                    Toast.makeText(getApplicationContext(), "请输入真实有效的手机号！",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 if (TextUtils.isEmpty(phoneNum)) {
                     Toast.makeText(getApplicationContext(), "手机号码不能为空",
                             Toast.LENGTH_SHORT).show();
@@ -104,6 +114,7 @@ public class ForgetActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 String phoneNum = textPhoneNumber.getText().toString().trim();
+                String password= textPassword.getText().toString().trim();
                 String code = textIdentifyingCode.getText().toString().trim();
                 //判断手机号码是否合法
                 Pattern p = Pattern.compile("^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(17[013678])|(18[0,5-9]))\\d{8}$");
@@ -139,9 +150,11 @@ public class ForgetActivity extends AppCompatActivity {
     private void init() {
         //获取注册界面的各个控件
         textPhoneNumber = (EditText) findViewById(R.id.ForgetPhoneNumber);
+        textPassword = (EditText) findViewById(R.id.ForgetPassword);
         textIdentifyingCode = (EditText) findViewById(R.id.ForgetIdentifyCode);
         buttonSendMessage = (Button) findViewById(R.id.ForgetSendIdentifyCode);
         buttonForgetSet = (Button) findViewById(R.id.ForgetSet);
+
 
     }
 
@@ -165,12 +178,42 @@ public class ForgetActivity extends AppCompatActivity {
                         //当号码来自短信注册页面时调用登录注册接口
                         //当号码来自绑定页面时调用绑定手机号码接口
 
-                        Toast.makeText(getApplicationContext(), "短信验证成功",
-                               Toast.LENGTH_SHORT).show();
+                        String url = "http://39.107.225.80:8080/julieServer/ForgetServlet";
+                        RequestParams params = new RequestParams(url);
+                        params.addParameter("username", textPhoneNumber.getText().toString());
+                        params.addParameter("password", textPassword.getText().toString());
+
+                        x.http().get(params, new org.xutils.common.Callback.CommonCallback<String>() {
+
+                            public void onSuccess(String result) {
+                                try {
+                                    JSONObject jb = new JSONObject(result);
+                                    //Log.i("AAA", String.valueOf(jb.getInt("code"))+jb.getString("msg"));
+                                    Toast.makeText(x.app(), jb.getString("msg"), Toast.LENGTH_LONG).show();
+                                    startActivity(new Intent(ForgetActivity.this, LoginActivity.class));
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+
+                            //请求异常后的回调方法
+                            @Override
+                            public void onError(Throwable ex, boolean isOnCallback) {
+                            }
+
+                            //主动调用取消请求的回调方法
+                            @Override
+                            public void onCancelled(CancelledException cex) {
+                            }
+
+                            @Override
+                            public void onFinished() {
+
+                            }
+                        });
 
 
-
-                        //startActivity(new Intent(ForgetActivity.this, LoginActivity.class));
 
                     } else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
                         Toast.makeText(getApplicationContext(), "验证码已经发送",
