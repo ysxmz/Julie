@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.bjtu.julie.R;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
@@ -48,8 +50,14 @@ public class LoginActivity extends AppCompatActivity {
                 x.http().get(params, new Callback.CommonCallback<String>() {
 
                     public void onSuccess(String result) {
-                        Toast.makeText(x.app(), result, Toast.LENGTH_LONG).show();
-                        Log.i("JAVA", "onSuccess result:" + result);
+                        try {
+                            JSONObject jb = new JSONObject(result);
+                           //Log.i("AAA", String.valueOf(jb.getInt("code"))+jb.getString("msg"));
+                            Toast.makeText(x.app(), jb.getString("msg"), Toast.LENGTH_LONG).show();
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
