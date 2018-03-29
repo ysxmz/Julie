@@ -28,4 +28,14 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    compile 'org.xutils:xutils:3.5.0'
+    compile files('libs/MobCommons-2016.1012.1447.jar')
+    compile(name: 'SMSSDK-2.1.2', ext: 'aar')
+}
+
+repositories{
+    flatDir{
+        dirs 'libs'
+    }
 }
