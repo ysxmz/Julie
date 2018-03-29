@@ -18,6 +18,9 @@ import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class LoginActivity extends AppCompatActivity {
     //创建控件的对象
     private EditText textPhoneNumber;
@@ -43,10 +46,19 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //判断手机号码是否合法
+                Pattern p = Pattern.compile("^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(17[013678])|(18[0,5-9]))\\d{8}$");
+                Matcher m = p.matcher(textPhoneNumber.getText().toString());
+                if(m.matches()==false) {
+                    Toast.makeText(getApplicationContext(), "请输入真实有效的手机号！",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 String url = "http://39.107.225.80:8080/julieServer/LoginServlet";
                 RequestParams params = new RequestParams(url);
                 params.addParameter("username", textPhoneNumber.getText().toString());
                 params.addParameter("password", textPassword.getText().toString());
+
                 x.http().get(params, new Callback.CommonCallback<String>() {
 
                     public void onSuccess(String result) {

@@ -18,6 +18,9 @@ import org.json.JSONObject;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
 
@@ -102,7 +105,14 @@ public class ForgetActivity extends AppCompatActivity {
 
                 String phoneNum = textPhoneNumber.getText().toString().trim();
                 String code = textIdentifyingCode.getText().toString().trim();
-
+                //判断手机号码是否合法
+                Pattern p = Pattern.compile("^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(17[013678])|(18[0,5-9]))\\d{8}$");
+                Matcher m = p.matcher(phoneNum);
+                if(m.matches()==false) {
+                    Toast.makeText(getApplicationContext(), "请输入真实有效的手机号！",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 if (TextUtils.isEmpty(phoneNum)) {
                     Toast.makeText(getApplicationContext(), "手机号码不能为空",
                             Toast.LENGTH_SHORT).show();
