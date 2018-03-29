@@ -30,6 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FootManActivity"></activity>
         <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.RegActivity" />
         <activity android:name=".Activity.ForgetActivity"></activity>
