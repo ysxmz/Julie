@@ -1,9 +1,11 @@
-package com.bjtu.julie;
+package com.bjtu.julie.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.bjtu.julie.R;
 
 public class ForgetActivity extends AppCompatActivity {
 
