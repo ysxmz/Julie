@@ -6,12 +6,16 @@ import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +55,6 @@ public class MainActivity  extends AppCompatActivity implements View.OnClickList
     // private FrameLayout frameLayout;
     public static MainActivity mainActivity;
     private List<Fragment> mFragment = new ArrayList<>();// 声明一个list集合存放Fragment（数据源）
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +64,7 @@ public class MainActivity  extends AppCompatActivity implements View.OnClickList
         initViews(); //初始化界面，并设置四个tab的监听
         setTabSelection(0); //第一次启动时开启第0个tab
         viewPager.setCurrentItem(0, false);
-    }
+        }
 
     /*
     * 根据传入的index，来设置开启的tab页面
@@ -249,5 +252,4 @@ public class MainActivity  extends AppCompatActivity implements View.OnClickList
                 break;
         }
     }
-
 }

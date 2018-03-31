@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bjtu.julie">
 
-    <!--配置权限-->
+    <!-- 配置权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -15,6 +15,7 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -30,16 +31,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FootManActivity"></activity>
+        <activity android:name=".FootManActivity" />
         <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.RegActivity" />
-        <activity android:name=".Activity.ForgetActivity"></activity>
-
+        <activity android:name=".Activity.ForgetActivity" />
         <activity
             android:name="com.mob.tools.MobUIShell"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="stateHidden|adjustResize"/>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".Pub_footActivity"
+            android:label="@string/title_activity_pub_foot"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".P_MessageActivity"
+            android:label="@string/title_activity_p__message"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
