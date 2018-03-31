@@ -25,18 +25,21 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
+    compile files('libs/MobCommons-2016.1012.1447.jar')
+    compile(name: 'SMSSDK-2.1.2', ext: 'aar')
+    compile files('libs/alipaySdk-20180316.jar')
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support:recyclerview-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'org.xutils:xutils:3.5.0'
-    compile files('libs/MobCommons-2016.1012.1447.jar')
-    compile(name: 'SMSSDK-2.1.2', ext: 'aar')
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    testCompile 'junit:junit:4.12'
 }
 
-repositories{
-    flatDir{
+repositories {
+    flatDir {
         dirs 'libs'
     }
 }
