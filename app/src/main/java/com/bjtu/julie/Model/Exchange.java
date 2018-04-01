@@ -1,4 +1,4 @@
-package com.bjtu.julie;
+package com.bjtu.julie.Model;
 
 /**
  * Created by dadada on 2018/3/31.

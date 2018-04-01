@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#003f51b5</color><!--首要颜色-->
+    <color name="colorPrimary">#003f51</color><!--首要颜色-->
     <color name="colorPrimaryDark">#374cc3</color><!--首要颜色暗色-->
     <color name="colorAccent">#FF4081</color><!--色彩强调-->
     <color name="theme">#66998F</color>

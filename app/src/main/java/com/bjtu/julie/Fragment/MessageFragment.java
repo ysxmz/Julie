@@ -1,23 +1,18 @@
 package com.bjtu.julie.Fragment;
 
 
-import android.app.Fragment;
-
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.bjtu.julie.Model.Exchange;
+import com.bjtu.julie.Adapter.MessageAdaper;
 import com.bjtu.julie.R;
 
 public class MessageFragment extends android.support.v4.app.Fragment {
@@ -35,15 +30,15 @@ public class MessageFragment extends android.support.v4.app.Fragment {
         return messageLayout;
     }
     private void initExchange(){
-        for (int i=0;i<=3;i++){
-            Exchange aaa=new Exchange("aaa",R.drawable.aaa_pic);
+
+            Exchange aaa=new Exchange("aaa",R.mipmap.aaa_pic);
             exchangeList.add(aaa);
-            Exchange bbb=new Exchange("bbb",R.drawable.bbb_pic);
+            Exchange bbb=new Exchange("bbb",R.mipmap.bbb_pic);
             exchangeList.add(bbb);
-            Exchange ccc=new Exchange("ccc",R.drawable.ccc_pic);
+            Exchange ccc=new Exchange("ccc",R.mipmap.ccc_pic);
             exchangeList.add(ccc);
-            Exchange ddd=new Exchange("ddd",R.drawable.ddd_pic);
+            Exchange ddd=new Exchange("ddd",R.mipmap.ddd_pic);
             exchangeList.add(ddd);
-        }
+
     }
 }

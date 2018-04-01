@@ -10,11 +10,10 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bjtu.julie.Activity.FootManActivity;
-import com.bjtu.julie.DepositActivity;
+import com.bjtu.julie.Activity.P_MessageActivity;
+import com.bjtu.julie.Activity.Pub_footActivity;
 import com.bjtu.julie.FullyLinearLayoutManager;
 import com.bjtu.julie.Model.Order;
-import com.bjtu.julie.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,11 +22,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
-
+import com.bjtu.julie.R;
 
 public class FootManFragment extends Fragment {
     public List<Order> orderlist = new ArrayList<>();
-    public static com.bjtu.julie.Activity.FootManActivity FootManActivity;
     @BindView(R.id.push_order)
     LinearLayout pushOrder;
     @BindView(R.id.push_message)
@@ -65,9 +63,12 @@ public class FootManFragment extends Fragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.push_order:
-                startActivity(new Intent(this.getContext(), DepositActivity.class));
+                Intent intent = new Intent(getActivity(), Pub_footActivity.class);
+                startActivity(intent);
                 break;
             case R.id.push_message:
+                Intent intent1 = new Intent(getActivity(), P_MessageActivity.class);
+                startActivity(intent1);
                 break;
         }
     }
@@ -87,8 +88,8 @@ public class FootManFragment extends Fragment {
             Order exorder = orderlist.get(position);
             holder.text_title.setText(exorder.getTitle());
             holder.text_money.setText(exorder.getMoney());
-            holder.text_address.setText(exorder.getAddress());
-            holder.text_time.setText(exorder.getTime());
+            holder.text_title.setText(exorder.getAddress());
+            holder.text_money.setText(exorder.getTime());
 
         }
 

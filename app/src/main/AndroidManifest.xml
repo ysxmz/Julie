@@ -42,7 +42,6 @@
         <activity android:name=".Activity.ForgetActivity" />
         <activity
             android:name="com.mob.tools.MobUIShell"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
@@ -63,11 +62,11 @@
         </activity>
 
         <activity
-            android:name=".Pub_footActivity"
+            android:name=".Activity.Pub_footActivity"
             android:label="@string/title_activity_pub_foot"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".P_MessageActivity"
+            android:name=".Activity.P_MessageActivity"
             android:label="@string/title_activity_p__message"
             android:theme="@style/AppTheme" />
     </application>

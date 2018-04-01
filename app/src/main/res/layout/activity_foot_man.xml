@@ -22,18 +22,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            >
+            android:layout_marginTop="10dp">
 
             <LinearLayout
                 android:id="@+id/push_order"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
-                android:layout_weight="1"
-                android:gravity="center"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
+                android:layout_weight="1"
                 android:background="@drawable/round_radius"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -46,7 +45,7 @@
 
 
                 <TextView
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:focusable="true"
@@ -76,7 +75,7 @@
                     android:layout_gravity="center"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
-                    android:src="@drawable/message" />
+                    android:src="@mipmap/message" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -93,12 +92,12 @@
         </LinearLayout>
 
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="1">
 
             <ImageView
                 android:layout_width="40dp"
@@ -118,18 +117,13 @@
                 android:textSize="20sp" />
 
             <ImageView
+                android:id="@+id/imageView2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_weight="0.01"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:src="@mipmap/ic_remove_black_24dp" />
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:src="@mipmap/ic_remove_black_24dp" />
 
 
         </LinearLayout>

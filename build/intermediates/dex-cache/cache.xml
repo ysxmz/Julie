@@ -30,21 +30,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\Android\2\Julie\app\libs\alipaySdk-20180316.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="5f108b956a57d6371d7ebe6bccf4c1faa3ccc511">
-        <dex dex="D:\Android\2\Julie\app\build\intermediates\pre-dexed\debug\alipaySdk-20180316_0577cffb3265b2fbbf68dde15f8955c756d43a66.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\Android\2\Julie\app\build\intermediates\exploded-aar\com.android.support\support-fragment\26.0.0-alpha1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.0"
         sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
         <dex dex="D:\Android\2\Julie\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-26.0.0-alpha1_840812a1ed0958be42ef8995f581a6c058a35759.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android\2\Julie\app\libs\alipaySdk-20180316.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="5f108b956a57d6371d7ebe6bccf4c1faa3ccc511">
+        <dex dex="D:\Android\2\Julie\app\build\intermediates\pre-dexed\debug\alipaySdk-20180316_0577cffb3265b2fbbf68dde15f8955c756d43a66.jar" />
     </item>
     <item
         is-multidex="false"
