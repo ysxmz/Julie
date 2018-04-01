@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color><!--首要颜色-->
-    <color name="colorPrimaryDark">#303F9F</color><!--首要颜色暗色-->
+    <color name="colorPrimary">#003f51b5</color><!--首要颜色-->
+    <color name="colorPrimaryDark">#374cc3</color><!--首要颜色暗色-->
     <color name="colorAccent">#FF4081</color><!--色彩强调-->
     <color name="theme">#66998F</color>
 
@@ -55,7 +55,7 @@
     <color name="bisque">#ffe4c4</color><!--桔黄色 -->
     <color name="lightyellow">#ffffe0</color><!--亮黄色 -->
     <color name="darkgoldenrod">#b8860b</color><!--暗金黄色 -->
-    <color name="darkorange">#ff8c00</color><!--暗桔黄色 -->
+    <color name="darkorange">#00ff8c00</color><!--暗桔黄色 -->
     <color name="lightgoldenrodyellow">#fafad2</color><!--亮金黄色 -->
     <color name="lemonchiffon">#fffacd</color><!--柠檬绸色 -->
     <color name="cornsilk">#fff8dc</color><!--米绸色 -->

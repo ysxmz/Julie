@@ -2,14 +2,20 @@ package com.bjtu.julie;
 
 import android.app.FragmentManager;
 import android.graphics.Color;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bjtu.julie.Fragment.FootManFragment;
 import com.bjtu.julie.Fragment.MessageFragment;
@@ -21,7 +27,7 @@ import java.util.List;
 public class MainActivity  extends AppCompatActivity implements View.OnClickListener,
         ViewPager.OnPageChangeListener{
 
-    private com.bjtu.julie.Fragment.FootManFragment FootManFragment;
+    private FootManFragment FootManFragment;
     private MessageFragment messageFragment;
     private SettingFragment settingFragment;
 
