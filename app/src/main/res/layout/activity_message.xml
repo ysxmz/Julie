@@ -6,8 +6,25 @@ android:layout_height="match_parent"
 android:orientation="vertical"
     android:weightSum="1">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:id="@+id/bjtuTitle"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:text="北京交通大学"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/mes_recycleView"
+        android:id="@+id/messRecycleView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

@@ -12,18 +12,10 @@ import android.widget.Toast;
 public class TitleLayout extends LinearLayout {
     public TitleLayout(Context context, AttributeSet attrs){
         super(context,attrs);
-        LayoutInflater.from(context).inflate(R.layout.title,this);
-        Button titleBack=(Button) findViewById(R.id.E_Button1);
-        titleBack.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((Activity)getContext()).finish();
-            }
-        });
         LayoutInflater.from(context).inflate(R.layout.title1,this);
-        Button title1Back1=(Button) findViewById(R.id.P_Button1);
-        Button titleOk=(Button) findViewById(R.id.P_Button2);
-        titleBack.setOnClickListener(new OnClickListener() {
+        Button title1Back=(Button) findViewById(R.id.pubBackButton);
+        Button titleOk=(Button) findViewById(R.id.pubOkButton);
+        title1Back.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((Activity)getContext()).finish();
@@ -35,5 +27,6 @@ public class TitleLayout extends LinearLayout {
                 Toast.makeText(getContext(),"发布信息成功",Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }

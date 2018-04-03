@@ -22,7 +22,7 @@ public class MessageFragment extends android.support.v4.app.Fragment {
                              Bundle savedInstanceState) {
       View messageLayout = inflater.inflate(R.layout.activity_message, container, false);
         initExchange();
-        RecyclerView recyclerView=(RecyclerView)messageLayout.findViewById(R.id.mes_recycleView);
+        RecyclerView recyclerView=(RecyclerView)messageLayout.findViewById(R.id.messRecycleView);
         LinearLayoutManager layoutManager=new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         MessageAdaper adaper=new MessageAdaper(exchangeList);

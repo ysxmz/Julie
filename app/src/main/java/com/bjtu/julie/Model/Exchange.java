@@ -5,7 +5,7 @@ package com.bjtu.julie.Model;
  */
 //信息实体类
 public class Exchange {
-    private String name; //内容
+    private String name; //用户名
     private  int imageId; //用户头像
     public Exchange(String name,int imageId){
         this.name=name;

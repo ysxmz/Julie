@@ -23,12 +23,12 @@ public class MessageAdaper extends RecyclerView.Adapter<MessageAdaper.ViewHolder
     static class ViewHolder extends RecyclerView.ViewHolder{
         View messView;
         ImageView messImage;
-        TextView messContent;
+        TextView messName;
         public ViewHolder(View view){
             super(view);
             messView=view;
-            messImage=(ImageView) view.findViewById(R.id.imageView);
-            messContent=(TextView) view.findViewById(R.id.exchange_name);
+            messImage=(ImageView) view.findViewById(R.id.messUserImage);
+            messName=(TextView) view.findViewById(R.id.messUserName);
         }
     }
     public  MessageAdaper(List<Exchange> MessList){
@@ -60,7 +60,7 @@ public class MessageAdaper extends RecyclerView.Adapter<MessageAdaper.ViewHolder
     public void  onBindViewHolder(ViewHolder holder,int position){
         Exchange exchange=mMessList.get(position);
         holder.messImage.setImageResource(exchange.getImageId());
-        holder.messContent.setText(exchange.getName());
+        holder.messName.setText(exchange.getName());
     }
     @Override
     public int getItemCount(){
